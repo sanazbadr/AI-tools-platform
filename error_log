@@ -1,0 +1,7 @@
+[01-Mar-2025 13:55:04 UTC] PHP Fatal error:  Cannot use App\Http\Controllers\ChatbotController as ChatbotController because the name is already in use in /home/aiarchasdq13az/public_html/aitoolsarcheoam/routes/web.php on line 14
+[01-Mar-2025 13:55:04 UTC] PHP Fatal error:  Cannot use App\Http\Controllers\ChatbotController as ChatbotController because the name is already in use in /home/aiarchasdq13az/public_html/aitoolsarcheoam/routes/web.php on line 14
+[01-Mar-2025 13:55:04 UTC] PHP Fatal error:  Cannot use App\Http\Controllers\ChatbotController as ChatbotController because the name is already in use in /home/aiarchasdq13az/public_html/aitoolsarcheoam/routes/web.php on line 14
+[01-Mar-2025 13:55:04 UTC] PHP Fatal error:  Cannot use App\Http\Controllers\ChatbotController as ChatbotController because the name is already in use in /home/aiarchasdq13az/public_html/aitoolsarcheoam/routes/web.php on line 14
+[01-Mar-2025 13:55:04 UTC] PHP Fatal error:  Cannot use App\Http\Controllers\ChatbotController as ChatbotController because the name is already in use in /home/aiarchasdq13az/public_html/aitoolsarcheoam/routes/web.php on line 14
+[02-Mar-2025 20:55:48 UTC] PHP Fatal error:  Allowed memory size of 335544320 bytes exhausted (tried to allocate 262144 bytes) in /home/aiarchasdq13az/public_html/aitoolsarcheoam/vendor/psy/psysh/src/ExecutionLoop/ProcessForker.php on line 224
+[02-Mar-2025 20:55:48 UTC] PHP Fatal error:  Allowed memory size of 335544320 bytes exhausted (tried to allocate 262144 bytes) in Unknown on line 0

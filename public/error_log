@@ -1,0 +1,1 @@
+[01-Mar-2025 10:19:16 UTC] PHP Fatal error:  Cannot use App\Http\Controllers\ChatbotController as ChatbotController because the name is already in use in /home/aiarchasdq13az/public_html/aitoolsarcheoam/routes/web.php on line 12
