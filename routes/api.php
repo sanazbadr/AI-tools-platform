@@ -14,20 +14,20 @@ use App\Http\Controllers\{
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('v1')->middleware(['auth:sanctum', 'throttle:api'])->group(function () {
+Route::prefix('v1')->middleware(['auth:sanctum', 'throttle:api'])->name('api.v1.')->group(function () {
 
     /*
     |-------------------------
     | Chatbot APIs
     |-------------------------
     */
-    Route::prefix('chatbot')->group(function () {
-        Route::get('/conversations', [ChatbotController::class, 'getConversations']);
-        Route::get('/messages', [ChatbotController::class, 'getMessages']);
-        Route::post('/message', [ChatbotController::class, 'handleMessage']);
-        Route::post('/stream', [ChatbotController::class, 'streamMessage']);
-        Route::post('/save-message', [ChatbotController::class, 'saveMessage']);
-        Route::delete('/conversation', [ChatbotController::class, 'deleteConversation']);
+    Route::prefix('chatbot')->name('chatbot.')->group(function () {
+        Route::get('/conversations', [ChatbotController::class, 'getConversations'])->name('conversations');
+        Route::get('/messages', [ChatbotController::class, 'getMessages'])->name('messages');
+        Route::post('/message', [ChatbotController::class, 'handleMessage'])->name('message');
+        Route::post('/stream', [ChatbotController::class, 'streamMessage'])->name('stream');
+        Route::post('/save-message', [ChatbotController::class, 'saveMessage'])->name('save-message');
+        Route::delete('/conversation', [ChatbotController::class, 'deleteConversation'])->name('conversation.delete');
     });
 
     /*
@@ -35,16 +35,16 @@ Route::prefix('v1')->middleware(['auth:sanctum', 'throttle:api'])->group(functio
     | DALL·E APIs
     |-------------------------
     */
-    Route::post('/dalle/generate', [DallEController::class, 'generateImage']);
+    Route::post('/dalle/generate', [DallEController::class, 'generateImage'])->name('dalle.generate');
 
     /*
     |-------------------------
     | TTS APIs
     |-------------------------
     */
-    Route::prefix('tts')->group(function () {
-        Route::post('/convert', [TTScontroller::class, 'convert']);
-        Route::get('/voices', [TTScontroller::class, 'getVoices']);
+    Route::prefix('tts')->name('tts.')->group(function () {
+        Route::post('/convert', [TTScontroller::class, 'convert'])->name('convert');
+        Route::get('/voices', [TTScontroller::class, 'getVoices'])->name('voices');
     });
 
     /*
@@ -52,7 +52,7 @@ Route::prefix('v1')->middleware(['auth:sanctum', 'throttle:api'])->group(functio
     | STT APIs
     |-------------------------
     */
-    Route::prefix('stt')->group(function () {
-        Route::post('/convert', [STTcontroller::class, 'convert']);
+    Route::prefix('stt')->name('stt.')->group(function () {
+        Route::post('/convert', [STTcontroller::class, 'convert'])->name('convert');
     });
 });
