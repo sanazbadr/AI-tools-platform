@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ChatbotController,
     DallEController,
-    TTScontroller,
-    STTcontroller
+    TTSController,
+    STTController
 };
 
 /*
@@ -43,8 +43,8 @@ Route::prefix('v1')->middleware(['auth:sanctum', 'throttle:api'])->name('api.v1.
     |-------------------------
     */
     Route::prefix('tts')->name('tts.')->group(function () {
-        Route::post('/convert', [TTScontroller::class, 'convert'])->name('convert');
-        Route::get('/voices', [TTScontroller::class, 'getVoices'])->name('voices');
+        Route::post('/convert', [TTSController::class, 'convert'])->name('convert');
+        Route::get('/voices', [TTSController::class, 'getVoices'])->name('voices');
     });
 
     /*
@@ -53,6 +53,6 @@ Route::prefix('v1')->middleware(['auth:sanctum', 'throttle:api'])->name('api.v1.
     |-------------------------
     */
     Route::prefix('stt')->name('stt.')->group(function () {
-        Route::post('/convert', [STTcontroller::class, 'convert'])->name('convert');
+        Route::post('/convert', [STTController::class, 'convert'])->name('convert');
     });
 });
