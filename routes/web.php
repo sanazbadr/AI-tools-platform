@@ -6,8 +6,8 @@ use App\Http\Controllers\{
     LoginController,
     GoogleAuthController,
     DallEController,
-    TTScontroller,
-    STTcontroller,
+    TTSController,
+    STTController,
     DashboardController,
     ArcheoController
 };
@@ -41,7 +41,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::post('/logout', [LoginController::class, 'logout'])
-    ->middleware('auth')
+    ->middleware('check.session')
     ->name('logout');
 
 /*
@@ -58,7 +58,7 @@ Route::prefix('auth/google')->name('google.')->group(function () {
         ->name('callback');
 
     Route::post('/logout', [GoogleAuthController::class, 'logout'])
-        ->middleware('auth')
+        ->middleware('check.session')
         ->name('logout');
 });
 
@@ -82,7 +82,7 @@ Route::middleware(['check.session'])->group(function () {
     Route::prefix('app')->name('app.')->group(function () {
         Route::get('/chatbot', [ChatbotController::class, 'index'])->name('chatbot');
         Route::get('/dalle', [DallEController::class, 'index'])->name('dalle');
-        Route::get('/tts', [TTScontroller::class, 'index'])->name('tts');
-        Route::get('/stt', [STTcontroller::class, 'sttPage'])->name('stt');
+        Route::get('/tts', [TTSController::class, 'index'])->name('tts');
+        Route::get('/stt', [STTController::class, 'sttPage'])->name('stt');
     });
 });
